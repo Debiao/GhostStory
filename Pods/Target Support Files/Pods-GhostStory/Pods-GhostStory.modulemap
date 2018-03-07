@@ -1,0 +1,6 @@
+framework module Pods_GhostStory {
+  umbrella header "Pods-GhostStory-umbrella.h"
+
+  export *
+  module * { export * }
+}
