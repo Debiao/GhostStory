@@ -175,7 +175,7 @@ class SdMainViewController: SdBaseViewController,UITableViewDelegate,UITableView
         let secretStr = "&showapi_sign=b8f27f88131240c8b8c39b2b8c6e6691"
         let URL = httpHeader+pageStr+showapIdStr+timeStr+typeStr+typeValueStr+secretStr
         
-        print(URL)
+     
         SdHttpRequest.shareHttpRequest.getStoryData(page:PageSize, url: URL) { (dataModel) in
             self.dataList.removeAllObjects()
             self.dataList.addObjects(from: dataModel)
@@ -183,9 +183,7 @@ class SdMainViewController: SdBaseViewController,UITableViewDelegate,UITableView
             if self.dataList.count == 0{
                 self.getRecommendData()
             }else{
-                
                 self.randomResults()
-                
                 if self.randomNumberSet.count > 2{
                     for index in self.randomNumberSet{
                         self.recommendArray?.add(self.dataList[index])
@@ -212,7 +210,7 @@ class SdMainViewController: SdBaseViewController,UITableViewDelegate,UITableView
             let timeFormatter = DateFormatter()
             timeFormatter.dateFormat = "yyyyMMddHHmmss"
             let strNowTime = timeFormatter.string(from: date as Date) as String
-            let httpHeader = "https://route.showapi.com/955-1?page="
+            let httpHeader =  "https://www.sdbsearch.com/955-1?page="
             let pageStr = "1"
             let showapIdStr = "&showapi_appid=33642&showapi_timestamp="
             let timeStr = strNowTime
@@ -220,7 +218,9 @@ class SdMainViewController: SdBaseViewController,UITableViewDelegate,UITableView
             let typeValueStr = storyType![index]
             let secretStr = "&showapi_sign=b8f27f88131240c8b8c39b2b8c6e6691"
             let URL = httpHeader+pageStr+showapIdStr+timeStr+typeStr+typeValueStr+secretStr
+            
             print(URL)
+            
             switch index {
             case 0:
                 do {

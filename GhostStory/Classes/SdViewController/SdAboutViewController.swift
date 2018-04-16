@@ -130,7 +130,7 @@ class SdAboutViewController: SdBaseViewController,UITableViewDelegate,UITableVie
         case 0:do {
             
             if (indexPath.row == 0) {
-                cell.textLabel?.text = "当前版本 (1.1.2)"
+                cell.textLabel?.text = "当前版本 1.4"
                 cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
                 cell.textLabel?.textColor = UIColor.black
         
@@ -151,8 +151,6 @@ class SdAboutViewController: SdBaseViewController,UITableViewDelegate,UITableVie
                     make.width.equalTo(SCREEN_WIDTH)
                     make.height.equalTo(74)
                 }
-                
-                
                 
             }
                  return cell

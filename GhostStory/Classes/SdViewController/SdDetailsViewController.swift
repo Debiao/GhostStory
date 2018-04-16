@@ -100,33 +100,15 @@ class SdDetailsViewController: SdBaseViewController,UIWebViewDelegate,UIScrollVi
             let a = self.htmlStr?.replacingOccurrences(of: "\r\n", with: "<br>")
             let b = a?.replacingOccurrences(of: "&nbsp;&nbsp;&nbsp", with: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp")
             let c = b?.replacingOccurrences(of: "neirong336();", with:"故事开始于那个傍晚")
-
             self.resultHtmlStr = c!
-         
             self.jointStr()
-            
         }
     }
     
     func jointStr(){
         loadHtmlStr = loadHtmlStr+resultHtmlStr!
         self.webView.loadHTMLString(loadHtmlStr, baseURL: nil)
-       
 
-//        let webHeightStr = webView.stringByEvaluatingJavaScript(from: "document.body.scrollHeight")
-//        let webHeight = CGFloat((webHeightStr! as NSString).floatValue)
-//
-//        self.webView.scrollView.contentOffset = (frame: CGPoint(x:0,y:webHeight)) as! CGPoint
-//
-//
-//       
-//       self.webView.scrollView.contentSize =
-//       self.webView.frame = CGRectMake(0, 350, SCREEN_WIDTH, webHeight)
-//        webView.snp.remakeConstraints{ (make) in
-//            make.width.equalTo(SCREEN_WIDTH)
-//            make.top.equalTo(bgImageView.snp.bottom)
-//            make.bottom.equalTo(view.snp.bottom)
-//        }
     }
     
     // 导航栏

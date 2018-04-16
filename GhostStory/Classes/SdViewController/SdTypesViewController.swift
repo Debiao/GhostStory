@@ -27,18 +27,12 @@ class SdTypesViewController: SdBaseViewController,UITableViewDelegate,UITableVie
         SVProgressHUD.show(withStatus: "正在加载...")
         view.backgroundColor = UIColor.red
         makeNavView()
-        
         //创建视图
         creatTableView()
-        
         getData()
-        
         //刷新
         setupPullToRefresh()
-        
         setdownPullToRefresh()
-        
-        
     }
     
     
@@ -48,21 +42,13 @@ class SdTypesViewController: SdBaseViewController,UITableViewDelegate,UITableVie
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "yyyyMMddHHmmss"
         let strNowTime = timeFormatter.string(from: date as Date) as String
-        
         let httpHeader = "https://www.sdbsearch.com/955-1?page=" //"https://route.showapi.com/955-1?page="
-        
         let pageStr = page
-        
         let showapIdStr = "&showapi_appid=33642&showapi_timestamp="
-        
         let timeStr = strNowTime
-        
         let typeStr = "&type="
-        
         let typeValueStr = type
-        
         let secretStr = "&showapi_sign=b8f27f88131240c8b8c39b2b8c6e6691"
-        
         let URL = httpHeader+pageStr!+showapIdStr+timeStr+typeStr+typeValueStr!+secretStr
         
         SdHttpRequest.shareHttpRequest.getStoryData(page:1, url: URL) { (dataModel) in
